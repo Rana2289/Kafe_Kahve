@@ -130,6 +130,7 @@
     <Content Include="Views\Home\magaza.cshtml" />
     <Content Include="Views\Home\urunler.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\iletisim.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

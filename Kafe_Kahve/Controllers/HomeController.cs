@@ -23,7 +23,13 @@ namespace Kafe_Kahve.Controllers
         {
             return View();
         }
+        [Route("magaza")]
         public ActionResult magaza()
+        {
+            return View();
+        }
+        [Route("iletisim")]
+        public ActionResult iletisim()
         {
             return View();
         }
