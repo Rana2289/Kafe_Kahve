@@ -17,12 +17,21 @@ namespace Kafe_Kahve.Controllers
         [Route("hakkimizda")]
         public ActionResult hakkimizda()
         {
-            return View();
+            using(kafe_kahveEntities db=new kafe_kahveEntities())
+            {
+                var model = db.hakkimizda.Find(1);
+                return View(model);
+            }
+            
         }
         [Route("urunler")]
         public ActionResult urunler()
         {
-            return View();
+            using (kafe_kahveEntities db = new kafe_kahveEntities())
+            {
+                var model = db.urunler.Where(x=>x.aktif==1).OrderBy(x=>x.sira).ToList();
+                return View(model);
+            }
         }
         [Route("magaza")]
         public ActionResult magaza()
