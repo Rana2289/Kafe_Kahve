@@ -34,8 +34,7 @@ namespace Kafe_Kahve.Controllers
             }
         }
 
-        [Route("urun/{id}")]
-
+        [Route("urun/{id}/{baslik}")]
         public ActionResult urunDetay( int id)
         {
             using (kafe_kahveEntities db = new kafe_kahveEntities())

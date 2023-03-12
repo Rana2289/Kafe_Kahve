@@ -1,4 +1,5 @@
 ﻿@model List<Kafe_Kahve.Models.urunler>
+@using Kafe_Kahve.App_Code
 @{
     ViewBag.Title = "ürünler";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -6,29 +7,27 @@
 
 @foreach (var urun in Model)
 {
-
-
-<section class="page-section">
-    <div class="container">
-        <div class="product-item">
-            <div class="product-item-title d-flex">
-                <div class="bg-faded p-5 d-flex ml-auto rounded">
-                    <h2 class="section-heading mb-0">
-                        <span class="section-heading-upper">@urun.ustbaslik</span>
-                        <span class="section-heading-lower">@urun.baslik</span>
-                    </h2>
+    <section class="page-section">
+        <div class="container">
+            <div class="product-item">
+                <div class="product-item-title d-flex">
+                    <div class="bg-faded p-5 d-flex ml-auto rounded">
+                        <h2 class="section-heading mb-0">
+                            <span class="section-heading-upper">@urun.ustbaslik</span>
+                            <span class="section-heading-lower">@urun.baslik</span>
+                        </h2>
+                    </div>
                 </div>
-            </div>
-            <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="~/contect/img/@urun.foto" alt="">
-            <div class="product-item-description d-flex mr-auto">
-                <div class="bg-faded p-5 rounded">
-                   @Html.Raw(@urun.icerik)
-                    @Html.ActionLink("detay", "urunDetay", new { id = urun.id }, new {@class="btn btn-info" })
+                <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="~/contect/img/@urun.foto" alt="">
+                <div class="product-item-description d-flex mr-auto">
+                    <div class="bg-faded p-5 rounded">
+                        @Html.Raw(@urun.icerik)
+                        @Html.ActionLink("detay", "urunDetay", new { id = urun.id, baslik = Seo.AdresDuzenle(urun.baslik) }, new { @class = "btn btn-info" })
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 }
 
 <!--
