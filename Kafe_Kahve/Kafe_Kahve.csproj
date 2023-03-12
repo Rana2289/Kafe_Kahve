@@ -135,6 +135,9 @@
   <ItemGroup>
     <Content Include="App_Code\Seo.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\admin\adminAreaRegistration.cs" />
+    <Compile Include="Areas\admin\Controllers\LoginController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -171,6 +174,7 @@
     <Content Include="Models\kafe_kahveModel.edmx.diagram">
       <DependentUpon>kafe_kahveModel.edmx</DependentUpon>
     </Content>
+    <Content Include="Areas\admin\Views\web.config" />
     <None Include="packages.config" />
     <Content Include="Views\Home\hakkimizda.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
@@ -179,6 +183,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\iletisim.cshtml" />
     <Content Include="Views\Home\urunDetay.cshtml" />
+    <Content Include="Views\Error\NotFound.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -188,6 +193,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\admin\Data\" />
+    <Folder Include="Areas\admin\Views\Login\" />
+    <Folder Include="Areas\admin\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
