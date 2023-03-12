@@ -33,6 +33,24 @@ namespace Kafe_Kahve.Controllers
                 return View(model);
             }
         }
+
+        [Route("urun/{id}")]
+
+        public ActionResult urunDetay( int id)
+        {
+            using (kafe_kahveEntities db = new kafe_kahveEntities())
+            {
+                var model = db.urunler.Where(x => x.aktif==1 && x.id == id).FirstOrDefault();
+                if (model == null)
+                {
+                    return HttpNotFound();
+                }
+                return View(model);
+            }
+        }
+
+
+
         [Route("magaza")]
         public ActionResult magaza()
         {

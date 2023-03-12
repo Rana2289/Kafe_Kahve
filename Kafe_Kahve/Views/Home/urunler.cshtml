@@ -1,4 +1,4 @@
-﻿@model List< Kafe_Kahve.Models.urunler>
+﻿@model List<Kafe_Kahve.Models.urunler>
 @{
     ViewBag.Title = "ürünler";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -23,6 +23,7 @@
             <div class="product-item-description d-flex mr-auto">
                 <div class="bg-faded p-5 rounded">
                    @Html.Raw(@urun.icerik)
+                    @Html.ActionLink("detay", "urunDetay", new { id = urun.id }, new {@class="btn btn-info" })
                 </div>
             </div>
         </div>

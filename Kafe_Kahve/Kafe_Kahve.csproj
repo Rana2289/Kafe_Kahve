@@ -177,6 +177,7 @@
     <Content Include="Views\Home\urunler.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\iletisim.cshtml" />
+    <Content Include="Views\Home\urunDetay.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
