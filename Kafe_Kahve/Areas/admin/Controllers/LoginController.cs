@@ -11,7 +11,7 @@ namespace Kafe_Kahve.Areas.admin.Controllers
         // GET: admin/Login
         public ActionResult Index()
         {
-            return Content("admin sayfası");
+            return View();
         }
     }
 }

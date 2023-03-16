@@ -1,4 +1,5 @@
 ﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -23,6 +24,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>4.3</TypeScriptToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -96,6 +98,86 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="contect\admin\dist\css\adminlte.css" />
+    <Content Include="contect\admin\dist\css\adminlte.min.css" />
+    <Content Include="contect\admin\dist\css\alt\adminlte.components.css" />
+    <Content Include="contect\admin\dist\css\alt\adminlte.components.min.css" />
+    <Content Include="contect\admin\dist\css\alt\adminlte.core.css" />
+    <Content Include="contect\admin\dist\css\alt\adminlte.core.min.css" />
+    <Content Include="contect\admin\dist\css\alt\adminlte.extra-components.css" />
+    <Content Include="contect\admin\dist\css\alt\adminlte.extra-components.min.css" />
+    <Content Include="contect\admin\dist\css\alt\adminlte.pages.css" />
+    <Content Include="contect\admin\dist\css\alt\adminlte.pages.min.css" />
+    <Content Include="contect\admin\dist\css\alt\adminlte.plugins.css" />
+    <Content Include="contect\admin\dist\css\alt\adminlte.plugins.min.css" />
+    <Content Include="contect\admin\dist\img\AdminLTELogo.png" />
+    <Content Include="contect\admin\dist\img\avatar.png" />
+    <Content Include="contect\admin\dist\img\avatar04.png" />
+    <Content Include="contect\admin\dist\img\avatar2.png" />
+    <Content Include="contect\admin\dist\img\avatar3.png" />
+    <Content Include="contect\admin\dist\img\avatar5.png" />
+    <Content Include="contect\admin\dist\img\boxed-bg.jpg" />
+    <Content Include="contect\admin\dist\img\boxed-bg.png" />
+    <Content Include="contect\admin\dist\img\credit\american-express.png" />
+    <Content Include="contect\admin\dist\img\credit\cirrus.png" />
+    <Content Include="contect\admin\dist\img\credit\mastercard.png" />
+    <Content Include="contect\admin\dist\img\credit\mestro.png" />
+    <Content Include="contect\admin\dist\img\credit\paypal.png" />
+    <Content Include="contect\admin\dist\img\credit\paypal2.png" />
+    <Content Include="contect\admin\dist\img\credit\visa.png" />
+    <Content Include="contect\admin\dist\img\default-150x150.png" />
+    <Content Include="contect\admin\dist\img\icons.png" />
+    <Content Include="contect\admin\dist\img\photo1.png" />
+    <Content Include="contect\admin\dist\img\photo2.png" />
+    <Content Include="contect\admin\dist\img\photo3.jpg" />
+    <Content Include="contect\admin\dist\img\photo4.jpg" />
+    <Content Include="contect\admin\dist\img\prod-1.jpg" />
+    <Content Include="contect\admin\dist\img\prod-2.jpg" />
+    <Content Include="contect\admin\dist\img\prod-3.jpg" />
+    <Content Include="contect\admin\dist\img\prod-4.jpg" />
+    <Content Include="contect\admin\dist\img\prod-5.jpg" />
+    <Content Include="contect\admin\dist\img\user1-128x128.jpg" />
+    <Content Include="contect\admin\dist\img\user2-160x160.jpg" />
+    <Content Include="contect\admin\dist\img\user3-128x128.jpg" />
+    <Content Include="contect\admin\dist\img\user4-128x128.jpg" />
+    <Content Include="contect\admin\dist\img\user5-128x128.jpg" />
+    <Content Include="contect\admin\dist\img\user6-128x128.jpg" />
+    <Content Include="contect\admin\dist\img\user7-128x128.jpg" />
+    <Content Include="contect\admin\dist\img\user8-128x128.jpg" />
+    <Content Include="contect\admin\dist\js\adminlte.js" />
+    <Content Include="contect\admin\dist\js\adminlte.min.js" />
+    <Content Include="contect\admin\dist\js\demo.js" />
+    <Content Include="contect\admin\dist\js\pages\dashboard.js" />
+    <Content Include="contect\admin\dist\js\pages\dashboard2.js" />
+    <Content Include="contect\admin\dist\js\pages\dashboard3.js" />
+    <Content Include="contect\admin\plugins\bootstrap\js\bootstrap.bundle.js" />
+    <Content Include="contect\admin\plugins\bootstrap\js\bootstrap.bundle.min.js" />
+    <Content Include="contect\admin\plugins\bootstrap\js\bootstrap.js" />
+    <Content Include="contect\admin\plugins\bootstrap\js\bootstrap.min.js" />
+    <Content Include="contect\admin\plugins\fontawesome-free\css\all.css" />
+    <Content Include="contect\admin\plugins\fontawesome-free\css\all.min.css" />
+    <Content Include="contect\admin\plugins\fontawesome-free\css\brands.css" />
+    <Content Include="contect\admin\plugins\fontawesome-free\css\brands.min.css" />
+    <Content Include="contect\admin\plugins\fontawesome-free\css\fontawesome.css" />
+    <Content Include="contect\admin\plugins\fontawesome-free\css\fontawesome.min.css" />
+    <Content Include="contect\admin\plugins\fontawesome-free\css\regular.css" />
+    <Content Include="contect\admin\plugins\fontawesome-free\css\regular.min.css" />
+    <Content Include="contect\admin\plugins\fontawesome-free\css\solid.css" />
+    <Content Include="contect\admin\plugins\fontawesome-free\css\solid.min.css" />
+    <Content Include="contect\admin\plugins\fontawesome-free\css\svg-with-js.css" />
+    <Content Include="contect\admin\plugins\fontawesome-free\css\svg-with-js.min.css" />
+    <Content Include="contect\admin\plugins\fontawesome-free\css\v4-shims.css" />
+    <Content Include="contect\admin\plugins\fontawesome-free\css\v4-shims.min.css" />
+    <Content Include="contect\admin\plugins\fontawesome-free\webfonts\fa-brands-400.svg" />
+    <Content Include="contect\admin\plugins\fontawesome-free\webfonts\fa-regular-400.svg" />
+    <Content Include="contect\admin\plugins\fontawesome-free\webfonts\fa-solid-900.svg" />
+    <Content Include="contect\admin\plugins\icheck-bootstrap\icheck-bootstrap.css" />
+    <Content Include="contect\admin\plugins\icheck-bootstrap\icheck-bootstrap.min.css" />
+    <Content Include="contect\admin\plugins\jquery\core.js" />
+    <Content Include="contect\admin\plugins\jquery\jquery.js" />
+    <Content Include="contect\admin\plugins\jquery\jquery.min.js" />
+    <Content Include="contect\admin\plugins\jquery\jquery.slim.js" />
+    <Content Include="contect\admin\plugins\jquery\jquery.slim.min.js" />
     <Content Include="contect\css\business-casual.css" />
     <Content Include="contect\css\business-casual.min.css" />
     <Content Include="contect\img\about.jpg" />
@@ -160,6 +242,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>kafe_kahveModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\kullanicilar.cs">
+      <DependentUpon>kafe_kahveModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\urunler.cs">
       <DependentUpon>kafe_kahveModel.tt</DependentUpon>
     </Compile>
@@ -175,6 +260,41 @@
       <DependentUpon>kafe_kahveModel.edmx</DependentUpon>
     </Content>
     <Content Include="Areas\admin\Views\web.config" />
+    <Content Include="Areas\admin\Views\Login\Index.cshtml" />
+    <Content Include="contect\admin\dist\css\adminlte.css.map" />
+    <Content Include="contect\admin\dist\css\adminlte.min.css.map" />
+    <Content Include="contect\admin\dist\css\alt\adminlte.components.css.map" />
+    <Content Include="contect\admin\dist\css\alt\adminlte.components.min.css.map" />
+    <Content Include="contect\admin\dist\css\alt\adminlte.core.css.map" />
+    <Content Include="contect\admin\dist\css\alt\adminlte.core.min.css.map" />
+    <Content Include="contect\admin\dist\css\alt\adminlte.extra-components.css.map" />
+    <Content Include="contect\admin\dist\css\alt\adminlte.extra-components.min.css.map" />
+    <Content Include="contect\admin\dist\css\alt\adminlte.pages.css.map" />
+    <Content Include="contect\admin\dist\css\alt\adminlte.pages.min.css.map" />
+    <Content Include="contect\admin\dist\css\alt\adminlte.plugins.css.map" />
+    <Content Include="contect\admin\dist\css\alt\adminlte.plugins.min.css.map" />
+    <Content Include="contect\admin\dist\js\adminlte.js.map" />
+    <Content Include="contect\admin\dist\js\adminlte.min.js.map" />
+    <Content Include="contect\admin\plugins\.npmignore" />
+    <Content Include="contect\admin\plugins\bootstrap\js\bootstrap.bundle.js.map" />
+    <Content Include="contect\admin\plugins\bootstrap\js\bootstrap.bundle.min.js.map" />
+    <Content Include="contect\admin\plugins\bootstrap\js\bootstrap.js.map" />
+    <Content Include="contect\admin\plugins\bootstrap\js\bootstrap.min.js.map" />
+    <Content Include="contect\admin\plugins\fontawesome-free\webfonts\fa-brands-400.eot" />
+    <Content Include="contect\admin\plugins\fontawesome-free\webfonts\fa-brands-400.ttf" />
+    <Content Include="contect\admin\plugins\fontawesome-free\webfonts\fa-brands-400.woff" />
+    <Content Include="contect\admin\plugins\fontawesome-free\webfonts\fa-brands-400.woff2" />
+    <Content Include="contect\admin\plugins\fontawesome-free\webfonts\fa-regular-400.eot" />
+    <Content Include="contect\admin\plugins\fontawesome-free\webfonts\fa-regular-400.ttf" />
+    <Content Include="contect\admin\plugins\fontawesome-free\webfonts\fa-regular-400.woff" />
+    <Content Include="contect\admin\plugins\fontawesome-free\webfonts\fa-regular-400.woff2" />
+    <Content Include="contect\admin\plugins\fontawesome-free\webfonts\fa-solid-900.eot" />
+    <Content Include="contect\admin\plugins\fontawesome-free\webfonts\fa-solid-900.ttf" />
+    <Content Include="contect\admin\plugins\fontawesome-free\webfonts\fa-solid-900.woff" />
+    <Content Include="contect\admin\plugins\fontawesome-free\webfonts\fa-solid-900.woff2" />
+    <Content Include="contect\admin\plugins\icheck-bootstrap\LICENSE" />
+    <Content Include="contect\admin\plugins\jquery\jquery.min.map" />
+    <Content Include="contect\admin\plugins\jquery\jquery.slim.min.map" />
     <None Include="packages.config" />
     <Content Include="Views\Home\hakkimizda.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
@@ -194,10 +314,10 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\admin\Data\" />
-    <Folder Include="Areas\admin\Views\Login\" />
     <Folder Include="Areas\admin\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
@@ -205,6 +325,7 @@
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <ProjectExtensions>

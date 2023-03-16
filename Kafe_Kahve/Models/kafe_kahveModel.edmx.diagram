@@ -7,6 +7,7 @@
       <Diagram DiagramId="71ff80f6420e42ac85dc6abd1a979a12" Name="Diagram1">
         <EntityTypeShape EntityType="kafe_kahveModel.hakkimizda" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="kafe_kahveModel.urunler" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kafe_kahveModel.kullanicilar" Width="1.5" PointX="5.5" PointY="1" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

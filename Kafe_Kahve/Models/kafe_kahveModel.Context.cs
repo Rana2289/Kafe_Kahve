@@ -27,5 +27,6 @@ namespace Kafe_Kahve.Models
     
         public virtual DbSet<hakkimizda> hakkimizda { get; set; }
         public virtual DbSet<urunler> urunler { get; set; }
+        public virtual DbSet<kullanicilar> kullanicilar { get; set; }
     }
 }
