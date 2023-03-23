@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-
+using Kafe_Kahve.Models;
+using System.Web.Security;
 namespace Kafe_Kahve.Areas.admin.Controllers
 {
     public class LoginController : Controller
@@ -12,6 +13,26 @@ namespace Kafe_Kahve.Areas.admin.Controllers
         public ActionResult Index()
         {
             return View();
+        }
+        // güvenlik için
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Alogin(kullanicilar kullaniciFormu)
+        {
+            using( kafe_kahveEntities db= new kafe_kahveEntities())
+            {
+                var kullaniciVarmi = db.kullanicilar.FirstOrDefault(
+                    x=>x.k_adi==kullaniciFormu.k_adi && x.sifre==kullaniciFormu.sifre);
+
+                if (kullaniciVarmi != null)
+                {
+                    FormsAuthentication.SetAuthCookie(kullaniciVarmi.k_adi, false);
+                    return RedirectToAction("/index", "urunler");
+                }
+                ViewBag.Hata = "kullanıcı adı veya şifre hatalı";
+                return View("index");
+            }
+            
         }
     }
 }
