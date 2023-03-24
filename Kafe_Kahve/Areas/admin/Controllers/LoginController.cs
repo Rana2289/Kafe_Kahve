@@ -19,6 +19,10 @@ namespace Kafe_Kahve.Areas.admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Alogin(kullanicilar kullaniciFormu)
         {
+            if (!ModelState.IsValid)
+            {
+                return View("index" ,kullaniciFormu);
+            }
             using( kafe_kahveEntities db= new kafe_kahveEntities())
             {
                 var kullaniciVarmi = db.kullanicilar.FirstOrDefault(
@@ -26,7 +30,7 @@ namespace Kafe_Kahve.Areas.admin.Controllers
 
                 if (kullaniciVarmi != null)
                 {
-                    FormsAuthentication.SetAuthCookie(kullaniciVarmi.k_adi, false);
+                    FormsAuthentication.SetAuthCookie(kullaniciVarmi.k_adi, kullaniciFormu.beniHatirla);
                     return RedirectToAction("/index", "urunler");
                 }
                 ViewBag.Hata = "kullanıcı adı veya şifre hatalı";

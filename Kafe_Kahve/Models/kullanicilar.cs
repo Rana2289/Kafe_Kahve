@@ -11,12 +11,20 @@ namespace Kafe_Kahve.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class kullanicilar
     {
         public int id { get; set; }
+
+        [Required(ErrorMessage ="lütfen kullanýcý adýnýzý giriniz")]
         public string k_adi { get; set; }
+
+        [Required(ErrorMessage = "lütfen parolanýzý giriniz")]
         public string sifre { get; set; }
         public Nullable<bool> role { get; set; }
+
+        public virtual bool beniHatirla { get; set; }
+
     }
 }
