@@ -12,7 +12,7 @@ namespace Kafe_Kahve.Areas.admin.Controllers
         // GET: admin/urunler
         public ActionResult Index()
         {
-            return Content("ürünler sayfası");
+            return View();
         }
     }
 }
