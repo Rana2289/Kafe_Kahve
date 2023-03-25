@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 using Kafe_Kahve.Models;
 using System.Web.Security;
+using Kafe_Kahve.contect.admin;
+
 namespace Kafe_Kahve.Areas.admin.Controllers
 {
     public class LoginController : Controller
@@ -14,6 +16,7 @@ namespace Kafe_Kahve.Areas.admin.Controllers
         {
             return View();
         }
+
         // güvenlik için
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -23,10 +26,12 @@ namespace Kafe_Kahve.Areas.admin.Controllers
             {
                 return View("index" ,kullaniciFormu);
             }
+
+            string yeniSifre = Sifrele.MD5Olustur(kullaniciFormu.sifre);
             using( kafe_kahveEntities db= new kafe_kahveEntities())
             {
                 var kullaniciVarmi = db.kullanicilar.FirstOrDefault(
-                    x=>x.k_adi==kullaniciFormu.k_adi && x.sifre==kullaniciFormu.sifre);
+                    x=>x.k_adi==kullaniciFormu.k_adi && x.sifre==yeniSifre);
 
                 if (kullaniciVarmi != null)
                 {
