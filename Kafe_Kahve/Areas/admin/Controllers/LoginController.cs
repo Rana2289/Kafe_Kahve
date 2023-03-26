@@ -16,6 +16,7 @@ namespace Kafe_Kahve.Areas.admin.Controllers
         {
             return View();
         }
+      
 
         // güvenlik için
         [HttpPost]
@@ -27,11 +28,11 @@ namespace Kafe_Kahve.Areas.admin.Controllers
                 return View("index" ,kullaniciFormu);
             }
 
-            string yeniSifre = Sifrele.MD5Olustur(kullaniciFormu.sifre);
+            string Sifre1 = Sifrele.MD5Olustur(kullaniciFormu.sifre);
             using( kafe_kahveEntities db= new kafe_kahveEntities())
             {
                 var kullaniciVarmi = db.kullanicilar.FirstOrDefault(
-                    x=>x.k_adi==kullaniciFormu.k_adi && x.sifre==yeniSifre);
+                    x=>x.k_adi==kullaniciFormu.k_adi && x.sifre==Sifre1);
 
                 if (kullaniciVarmi != null)
                 {
@@ -42,6 +43,11 @@ namespace Kafe_Kahve.Areas.admin.Controllers
                 return View("index");
             }
             
+        }
+        public ActionResult Logout()
+        {
+            FormsAuthentication.SignOut();
+            return RedirectToAction("index");
         }
     }
 }
